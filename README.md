@@ -6,6 +6,5 @@
 Sistema ABC: 
 
 ## Sistema de bajas, altas y consultas
-El sistema consiste en un pequeño sistema de Maven con Java FX
-Incluye conexión a PostgreSQL y un CRUD.
+El sistema consiste en un pequeño sistema de Maven con Java FX, que reside en la carpeta ***demo***. El sistema incluye conexión a PostgreSQL y un CRUD.
 El script para la base de datos está incluido en el archivo ***Script.sql***
