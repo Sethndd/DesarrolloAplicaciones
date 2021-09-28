@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" prefHeight="350.0" prefWidth="500.0" fx:controller="com.example.demo.Tabla">
+<TableView fx:id="tbEstudiantes" prefHeight="280.0" prefWidth="480.0" onMouseClicked="#consultarPorTb">
+    <columns>
+        <TableColumn fx:id="tcPrimApe" prefWidth="120.0" text="Apellido Paterno"/>
+        <TableColumn fx:id="tcSegApe" prefWidth="120.0" text="Apellido Materno"/>
+        <TableColumn fx:id="tcPrimNom" prefWidth="120.0" text="Primer Nombre"/>
+        <TableColumn fx:id="tcSegNom" prefWidth="120.0" text="Segundo Nombre"/>
+    </columns>
+</TableView>
+<HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="50.0">
+    <Button mnemonicParsing="false" onAction="#agregar" prefHeight="30.0" prefWidth="100.0" text="Agregar"/>
+    <Button mnemonicParsing="false" onAction="#consultarPorBtn" prefHeight="30.0" prefWidth="100.0" text="Consultar"/>
+    <Button mnemonicParsing="false" onAction="#borrar" prefHeight="30.0" prefWidth="100.0" text="Borrar"/>
+</HBox>
+</VBox>
