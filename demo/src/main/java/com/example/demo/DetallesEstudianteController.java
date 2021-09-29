@@ -2,6 +2,7 @@ package com.example.demo;
 
 import DataBaseConnection.EstudianteDAO;
 import POJO.Estudiante;
+import Utilidades.ControladorVentanas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,7 +17,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
-public class DetallesEstudiante extends Controller implements Initializable {
+public class DetallesEstudianteController extends Controller implements Initializable {
     @FXML
     private TextField tfPrimApe;
     @FXML
@@ -34,12 +35,12 @@ public class DetallesEstudiante extends Controller implements Initializable {
     @FXML
     private String tipoVentana;
 
-    public DetallesEstudiante(String tipoVentana) {
+    public DetallesEstudianteController(String tipoVentana) {
         this.tipoVentana = tipoVentana;
         this.estudiante = null;
     }
 
-    public DetallesEstudiante(String tipoVentana, Estudiante estudiante) {
+    public DetallesEstudianteController(String tipoVentana, Estudiante estudiante) {
         this.tipoVentana = tipoVentana;
         this.estudiante = estudiante;
     }
@@ -57,7 +58,7 @@ public class DetallesEstudiante extends Controller implements Initializable {
                 EstudianteDAO.guardar(estudiante);
             }
             else{
-                alerta("No puede dejar los campos en blanco.");
+                ControladorVentanas.alerta("No puede dejar los campos en blanco.");
             }
         }
         cerrarVentana();
@@ -65,7 +66,7 @@ public class DetallesEstudiante extends Controller implements Initializable {
 
     @FXML
     protected void cancelar(ActionEvent actionEvent){
-        if (alertaPregunta("¿Desea cancelar el registro?").get() == ButtonType.OK) {
+        if (ControladorVentanas.alertaPregunta("¿Desea cancelar el registro?").get() == ButtonType.OK) {
             cerrarVentana();
         }
     }
@@ -90,19 +91,6 @@ public class DetallesEstudiante extends Controller implements Initializable {
     private void cerrarVentana(){
         Stage stage = (Stage) btnAceptar.getScene().getWindow();
         stage.close();
-    }
-
-    private void alerta(String texto){
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setHeaderText(texto);
-        alert.show();
-    }
-
-    private Optional<ButtonType> alertaPregunta(String pregunta){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setHeaderText(pregunta);
-
-        return alert.showAndWait();
     }
 
     private boolean verificarDatos() {
