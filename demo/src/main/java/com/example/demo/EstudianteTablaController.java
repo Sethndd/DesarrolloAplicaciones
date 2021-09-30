@@ -2,7 +2,8 @@ package com.example.demo;
 
 import DataBaseConnection.EstudianteDAO;
 import POJO.Estudiante;
-import Utilidades.ControladorVentanas;
+import Utilidades.UtilVentanas;
+import com.mysql.cj.util.Util;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,13 +31,15 @@ public class EstudianteTablaController extends Controller implements Initializab
     public TableColumn<Estudiante, String> tcPrimNom;
     @FXML
     public TableColumn<Estudiante, String> tcSegNom;
+    @FXML
+    public TableColumn<Estudiante, String> tcOrigen;
     ObservableList<Estudiante> estudiantesObs;
     List<Estudiante> estudiantes;
 
     @FXML
     protected void agregar(ActionEvent actionEvent) {
         DetallesEstudianteController detalles = new DetallesEstudianteController("Agregar");
-        ControladorVentanas.abrirYEsperar(detalles, "DetallesEstudiante");
+        UtilVentanas.iniciarVentana(tbEstudiantes, detalles, "DetallesEstudiante.fxml", false);
         llenarTabla();
     }
 
@@ -56,11 +59,11 @@ public class EstudianteTablaController extends Controller implements Initializab
     protected void borrar(ActionEvent actionEvent) {
         Estudiante estudiante = tbEstudiantes.getSelectionModel().getSelectedItem();
         if(estudiante == null){
-            ControladorVentanas.alerta("Seleccione un estudiante primero.");
+            UtilVentanas.alerta("Seleccione un estudiante primero.", Alert.AlertType.WARNING);
         }
         else{
             EstudianteDAO.borrar(estudiante);
-            ControladorVentanas.alerta("Estudiante borrado exitosamente");
+            UtilVentanas.alerta("Estudiante borrado exitosamente", Alert.AlertType.INFORMATION);
             llenarTabla();
         }
     }
@@ -77,6 +80,7 @@ public class EstudianteTablaController extends Controller implements Initializab
         tcSegApe.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("segundoApe"));
         tcPrimNom.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("primerNom"));
         tcSegNom.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("segundoNom"));
+        tcOrigen.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("origen"));
 
         estudiantes = EstudianteDAO.getEstudiantesActivos();
         estudiantesObs =  FXCollections.observableArrayList(estudiantes);
@@ -92,7 +96,7 @@ public class EstudianteTablaController extends Controller implements Initializab
         }
         else{
             DetallesEstudianteController detalles = new DetallesEstudianteController("Consultar", estudiante);
-            ControladorVentanas.abrirYEsperar(detalles, "DetallesEstudiante");
+            UtilVentanas.iniciarVentana(tbEstudiantes, detalles, "DetallesEstudiante.fxml", false);
         }
     }
 }

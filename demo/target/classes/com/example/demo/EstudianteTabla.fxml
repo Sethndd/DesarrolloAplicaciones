@@ -7,13 +7,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" prefHeight="350.0" prefWidth="500.0" fx:controller="com.example.demo.EstudianteTablaController">
-<TableView fx:id="tbEstudiantes" prefHeight="280.0" prefWidth="480.0" onMouseClicked="#consultarPorTb">
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" prefHeight="350.0" prefWidth="620.0" fx:controller="com.example.demo.EstudianteTablaController">
+<TableView fx:id="tbEstudiantes" prefHeight="280.0" prefWidth="600.0" onMouseClicked="#consultarPorTb">
     <columns>
         <TableColumn fx:id="tcPrimApe" prefWidth="120.0" text="Apellido Paterno"/>
         <TableColumn fx:id="tcSegApe" prefWidth="120.0" text="Apellido Materno"/>
         <TableColumn fx:id="tcPrimNom" prefWidth="120.0" text="Primer Nombre"/>
         <TableColumn fx:id="tcSegNom" prefWidth="120.0" text="Segundo Nombre"/>
+        <TableColumn fx:id="tcOrigen" prefWidth="120.0" text="Lugar de origen"/>
     </columns>
 </TableView>
 <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="50.0">

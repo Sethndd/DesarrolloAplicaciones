@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="300.0" prefWidth="300.0">
-    <VBox alignment="CENTER" prefHeight="300.0" prefWidth="300.0" spacing="30.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="360.0" prefWidth="300.0">
+    <VBox alignment="CENTER" prefHeight="360.0" prefWidth="300.0" spacing="30.0">
         <HBox alignment="CENTER">
             <Label prefWidth="100.0" text="Apellido Paterno:"/>
             <TextField prefWidth="150.0" fx:id="tfPrimApe"/>
@@ -24,6 +24,10 @@
         <HBox alignment="CENTER">
             <Label prefWidth="100.0" text="Segundo Nombre:"/>
             <TextField prefWidth="150.0" fx:id="tfSegNom"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <Label prefWidth="100.0" text="Cuidad de origen:"/>
+            <TextField prefWidth="150.0" fx:id="tfOrigen"/>
         </HBox>
         <HBox alignment="CENTER" spacing="30.0">
             <Button mnemonicParsing="false" onAction="#aceptar" prefHeight="30.0" prefWidth="90.0" text="Aceptar" fx:id="btnAceptar"/>
