@@ -67,4 +67,29 @@ public class EstudianteDAO {
             System.out.println(ex.getMessage());
         }
     }
+
+    public static Estudiante getEstudianteById(int id){
+        Connection connection = DBConnector.getConnection();
+        String query = "SELECT * FROM public.\"Estudiante\" WHERE id = ?;";
+
+        Estudiante estudiante = null;
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                estudiante = new Estudiante(
+                        resultSet.getInt("id"),
+                        resultSet.getString("primer_ape"),
+                        resultSet.getString("segundo_ape"),
+                        resultSet.getString("primer_nom"),
+                        resultSet.getString("segundo_nom"),
+                        resultSet.getBoolean("activo"),
+                        resultSet.getString("origen"));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return estudiante;
+    }
 }

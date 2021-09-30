@@ -84,4 +84,8 @@ public class Estudiante {
         this.origen = origen;
     }
 
+    @Override
+    public String toString() {
+        return primerNom + ' ' + segundoNom + ' ' + primerApe + ' ' + segundoApe;
+    }
 }
