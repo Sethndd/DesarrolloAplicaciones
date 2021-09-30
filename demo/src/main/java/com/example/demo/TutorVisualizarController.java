@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TutorVisualizarController extends Controller implements Initializable {
+public class TutorVisualizarController implements Initializable, Controller {
     public Label lb_telefonoMovil;
     public Button btnRegresar;
     public Label lb_telefonoCasa;

@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 import static Utilidades.UtilVentanas.alerta;
 import static Utilidades.UtilVentanas.cerrar;
 
-public class ColegioController extends Controller implements Initializable {
+public class ColegioController implements Initializable, Controller {
 
     @FXML public Button botonCancelar;
     @FXML private Button botonEliminar;

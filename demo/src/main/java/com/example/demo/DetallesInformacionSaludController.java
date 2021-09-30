@@ -13,7 +13,7 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DetallesInformacionSaludController extends Controller implements Initializable {
+public class DetallesInformacionSaludController implements Initializable, Controller {
     @FXML
     private Label labelNombreEstudiante;
     @FXML

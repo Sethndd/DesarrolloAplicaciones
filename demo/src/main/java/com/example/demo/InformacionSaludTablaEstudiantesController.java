@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 
 import static Utilidades.UtilVentanas.iniciarVentana;
 
-public class InformacionSaludTablaEstudiantesController extends Controller implements Initializable {
+public class InformacionSaludTablaEstudiantesController implements Initializable, Controller {
     @FXML
     public TableView<Estudiante> tbEstudiantes;
     @FXML

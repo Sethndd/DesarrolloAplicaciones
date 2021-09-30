@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" prefHeight="350.0" prefWidth="620.0" fx:controller="com.example.demo.EstudianteTablaController">
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" prefHeight="350.0" prefWidth="620.0">
 <TableView fx:id="tbEstudiantes" prefHeight="280.0" prefWidth="600.0" onMouseClicked="#consultarPorTb">
     <columns>
         <TableColumn fx:id="tcPrimApe" prefWidth="120.0" text="Apellido Paterno"/>

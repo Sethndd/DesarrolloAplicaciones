@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class EstudianteTablaController extends Controller implements Initializable{
+public class EstudianteTablaController implements Initializable, Controller{
     @FXML
     public TableView<Estudiante> tbEstudiantes;
     @FXML
