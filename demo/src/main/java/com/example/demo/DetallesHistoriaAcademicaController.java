@@ -48,7 +48,7 @@ public class DetallesHistoriaAcademicaController  implements Initializable {
 //
 //            cbEstudiante.setItems(historiaAcademicasObs);
             Estudiante estudiante; //TODO = EstudianteDAO.getEstudianteById(historiaAcademica.getIdEstudiante());
-            cbEstudiante.getSelectionModel().select(estudiante);
+            //cbEstudiante.getSelectionModel().select(estudiante);
             tfColegioAnterior.setText(historiaAcademica.getColegioAnterior());
             tfAño.setText(historiaAcademica.getAño());
             tfGrado.setText(historiaAcademica.getGrado());

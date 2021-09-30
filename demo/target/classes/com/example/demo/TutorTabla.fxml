@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="675.0" prefWidth="1241.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.TutorTablaController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="675.0" prefWidth="1241.0">
+         <children>
+            <TableView fx:id="tv_tutores" prefHeight="576.0" prefWidth="1241.0">
+              <columns>
+                  <TableColumn fx:id="tc_primernombre" prefWidth="141.0" text="Primer nombre" />
+                  <TableColumn fx:id="tc_segundonombre" prefWidth="138.0" text="Segundo nombre" />
+                  <TableColumn fx:id="tc_apellidopaterno" minWidth="0.0" prefWidth="135.0" text="Apellido paterno" />
+                <TableColumn fx:id="tc_apellidomaterno" prefWidth="157.0" text="Apellido materno" />
+                <TableColumn fx:id="tc_correoelectronico" prefWidth="159.0" text="Correo electronico" />
+                  <TableColumn fx:id="tc_telefonocasa" prefWidth="140.0" text="Telefono de casa" />
+                  <TableColumn fx:id="tc_telefonomovil" prefWidth="141.0" text="Telefono movil" />
+                  <TableColumn fx:id="tc_estudiante" prefWidth="229.0" text="Estudiante" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+               <children>
+                  <Button fx:id="bt_consultar" mnemonicParsing="false" onAction="#clicConsultar" text="Consultar" />
+                  <Button mnemonicParsing="false" onAction="#clicRegistrar" text="Registrar" />
+                  <Button mnemonicParsing="false" onAction="#clicBorrar" text="Borrar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
