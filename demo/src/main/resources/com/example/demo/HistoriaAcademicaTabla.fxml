@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="441.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo.HistoriaAcademicaController">
+    <TableView fx:id="tbHistoriasAcademicas" onMouseClicked="#clicHistoriaAcademica" prefHeight="313.0"
+               prefWidth="826.0">
+        <columns>
+            <TableColumn fx:id="tcEstudiante" prefWidth="252.0" text="Estudiante"/>
+            <TableColumn fx:id="tcColegioAnterior" prefWidth="278.0" text="Colegio Anterior"/>
+            <TableColumn fx:id="tcAño" prefWidth="134.0" text="Año"/>
+            <TableColumn fx:id="tcGrado" prefWidth="161.0" text="Grado"/>
+        </columns>
+    </TableView>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+        <children>
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#clicAgregar" text="Agregar"/>
+            <Button mnemonicParsing="false" onAction="#clicConsultar" text="Consultar"/>
+            <Button mnemonicParsing="false" onAction="#clicBorrar" text="Borrar"/>
+        </children>
+    </HBox>
+</VBox>
