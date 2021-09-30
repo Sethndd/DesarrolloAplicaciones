@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import Utilidades.UtilVentanas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,7 +9,7 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuPrincipalController implements Initializable {
+public class MenuPrincipalController extends Controller implements Initializable {
     @FXML
     private Button buttonEstudiantes;
     @FXML
@@ -28,7 +29,7 @@ public class MenuPrincipalController implements Initializable {
 
     @FXML
     protected void clickEstudiantes(ActionEvent actionEvent){
-
+        UtilVentanas.iniciarVentana(buttonEstudiantes, new EstudianteTablaController(), "EstudianteTabla.fxml", UtilVentanas.NO_CERRAR);
     }
     @FXML
     protected void ClickTutores(ActionEvent actionEvent){
@@ -36,7 +37,7 @@ public class MenuPrincipalController implements Initializable {
     }
     @FXML
     protected void ClickInfoSalud(ActionEvent actionEvent){
-
+        UtilVentanas.iniciarVentana(buttonSalud, new InformacionSaludTablaEstudiantesController(), "InformacionSaludTablaEstudiantes.fxml", UtilVentanas.NO_CERRAR);
     }
     @FXML
     protected void clickColegios(ActionEvent actionEvent){
@@ -44,6 +45,6 @@ public class MenuPrincipalController implements Initializable {
     }
     @FXML
     protected void ClickInfoAcademica(ActionEvent actionEvent){
-
+        UtilVentanas.iniciarVentana(buttonInfoAcademica, new HistoriaAcademicaController(), "HistoriaAcademicaTabla.fxml", UtilVentanas.NO_CERRAR);
     }
 }
