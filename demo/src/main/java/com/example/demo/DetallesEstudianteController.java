@@ -2,7 +2,7 @@ package com.example.demo;
 
 import DataBaseConnection.EstudianteDAO;
 import POJO.Estudiante;
-import Utilidades.ControladorVentanas;
+import Utilidades.UtilVentanas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -27,12 +26,12 @@ public class DetallesEstudianteController extends Controller implements Initiali
     @FXML
     private TextField tfSegNom;
     @FXML
+    private TextField tfOrigen;
+    @FXML
     private Button btnAceptar;
     @FXML
     private Button btnCancelar;
-    @FXML
     private Estudiante estudiante;
-    @FXML
     private String tipoVentana;
 
     public DetallesEstudianteController(String tipoVentana) {
@@ -54,11 +53,12 @@ public class DetallesEstudianteController extends Controller implements Initiali
                         tfSegApe.getText(),
                         tfPrimNom.getText(),
                         tfSegNom.getText(),
-                        true);
+                        true,
+                        tfOrigen.getText());
                 EstudianteDAO.guardar(estudiante);
             }
             else{
-                ControladorVentanas.alerta("No puede dejar los campos en blanco.");
+                UtilVentanas.alerta("No puede dejar los campos en blanco.", Alert.AlertType.WARNING);
             }
         }
         cerrarVentana();
@@ -66,7 +66,7 @@ public class DetallesEstudianteController extends Controller implements Initiali
 
     @FXML
     protected void cancelar(ActionEvent actionEvent){
-        if (ControladorVentanas.alertaPregunta("¿Desea cancelar el registro?").get() == ButtonType.OK) {
+        if (UtilVentanas.alertaPregunta("¿Desea cancelar el registro?").get() == ButtonType.OK) {
             cerrarVentana();
         }
     }
@@ -82,6 +82,8 @@ public class DetallesEstudianteController extends Controller implements Initiali
             tfPrimNom.setText(estudiante.getPrimerNom());
             tfSegNom.setEditable(false);
             tfSegNom.setText(estudiante.getSegundoNom());
+            tfOrigen.setEditable(false);
+            tfOrigen.setText(estudiante.getOrigen());
 
             btnCancelar.setVisible(false);
             btnCancelar.setManaged(false);

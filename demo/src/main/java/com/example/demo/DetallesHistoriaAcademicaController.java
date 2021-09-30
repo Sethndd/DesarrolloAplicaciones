@@ -4,10 +4,12 @@ import DataBaseConnection.EstudianteDAO;
 import DataBaseConnection.HistoriaAcademicaDAO;
 import POJO.Estudiante;
 import POJO.HistoriaAcademica;
+import Utilidades.UtilVentanas;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -16,7 +18,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.*;
 
-public class DetallesHistoriaAcademicaController  implements Initializable {
+public class DetallesHistoriaAcademicaController extends Controller  implements Initializable {
 
     public ComboBox<Estudiante> cbEstudiante;
     public TextField tfColegioAnterior;
@@ -28,8 +30,12 @@ public class DetallesHistoriaAcademicaController  implements Initializable {
     private HistoriaAcademica historiaAcademica;
     private String tipoVentana;
 
-    public DetallesHistoriaAcademicaController(HistoriaAcademicaController historiaAcademicaController, HistoriaAcademica historiaAcademica, String tipoVentana ){
+    public DetallesHistoriaAcademicaController(HistoriaAcademicaController historiaAcademicaController, String tipoVentana ){
         this.historiaAcademicaController = historiaAcademicaController;
+        this.tipoVentana = tipoVentana;
+    }
+
+    public DetallesHistoriaAcademicaController(HistoriaAcademica historiaAcademica, String tipoVentana){
         this.historiaAcademica = historiaAcademica;
         this.tipoVentana = tipoVentana;
     }
@@ -42,13 +48,8 @@ public class DetallesHistoriaAcademicaController  implements Initializable {
             tfAño.setEditable(false);
             tfGrado.setEditable(false);
 
-//            ArrayList<HistoriaAcademica> arrayList = new ArrayList<>();
-//            arrayList.add(historiaAcademica);
-//            ObservableList<HistoriaAcademica> historiaAcademicasObs = FXCollections.observableArrayList(arrayList);
-//
-//            cbEstudiante.setItems(historiaAcademicasObs);
-            Estudiante estudiante; //TODO = EstudianteDAO.getEstudianteById(historiaAcademica.getIdEstudiante());
-            //cbEstudiante.getSelectionModel().select(estudiante);
+            Estudiante estudiante = EstudianteDAO.getEstudianteById(historiaAcademica.getIdEstudiante());
+            cbEstudiante.getSelectionModel().select(estudiante);
             tfColegioAnterior.setText(historiaAcademica.getColegioAnterior());
             tfAño.setText(historiaAcademica.getAño());
             tfGrado.setText(historiaAcademica.getGrado());
@@ -73,9 +74,11 @@ public class DetallesHistoriaAcademicaController  implements Initializable {
                 historiaAcademica.setIdEstudiante(estudiante.getId());
 
                 HistoriaAcademicaDAO.guardar(historiaAcademica);
-                //TODO ADD ALERT DONE
+
+                UtilVentanas.alerta("Registro completado.", Alert.AlertType.INFORMATION);
+                historiaAcademicaController.llenarTabla();
             } else {
-                //TODO ADD ALERT EMPTY FIELDS
+                UtilVentanas.alerta("Asegúrese de Llenar todos los campos.", Alert.AlertType.WARNING);
             }
         }
         cerrarVentana();
@@ -93,7 +96,6 @@ public class DetallesHistoriaAcademicaController  implements Initializable {
     }
 
     private void cerrarVentana(){
-        Stage stage = (Stage) btnAceptar.getScene().getWindow();
-        stage.close();
+        UtilVentanas.cerrar(btnAceptar);
     }
 }
