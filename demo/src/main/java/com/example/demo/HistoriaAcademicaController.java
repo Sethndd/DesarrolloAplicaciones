@@ -3,7 +3,6 @@ package com.example.demo;
 import DataBaseConnection.HistoriaAcademicaDAO;
 import POJO.HistoriaAcademica;
 import Utilidades.UtilVentanas;
-import com.mysql.cj.util.Util;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
