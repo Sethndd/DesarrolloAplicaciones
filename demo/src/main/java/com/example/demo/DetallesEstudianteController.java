@@ -2,7 +2,7 @@ package com.example.demo;
 
 import DataBaseConnection.EstudianteDAO;
 import POJO.Estudiante;
-import Utilidades.ControladorVentanas;
+import Utilidades.UtilVentanas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -59,7 +58,7 @@ public class DetallesEstudianteController extends Controller implements Initiali
                 EstudianteDAO.guardar(estudiante);
             }
             else{
-                ControladorVentanas.alerta("No puede dejar los campos en blanco.");
+                UtilVentanas.alerta("No puede dejar los campos en blanco.", Alert.AlertType.WARNING);
             }
         }
         cerrarVentana();
@@ -67,7 +66,7 @@ public class DetallesEstudianteController extends Controller implements Initiali
 
     @FXML
     protected void cancelar(ActionEvent actionEvent){
-        if (ControladorVentanas.alertaPregunta("¿Desea cancelar el registro?").get() == ButtonType.OK) {
+        if (UtilVentanas.alertaPregunta("¿Desea cancelar el registro?").get() == ButtonType.OK) {
             cerrarVentana();
         }
     }
