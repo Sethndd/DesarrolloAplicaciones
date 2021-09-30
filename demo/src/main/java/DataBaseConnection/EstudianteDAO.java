@@ -13,7 +13,7 @@ public class EstudianteDAO {
     public static List<Estudiante> getEstudiantesActivos(){
         Connection connection = DBConnector.getConnection();
         List<Estudiante> estudiantes = new ArrayList<>();
-        String query = "SELECT * FROM public.\"estudiante\" WHERE activo = true ORDER BY id ASC ;";
+        String query = "SELECT * FROM public.\"Estudiante\" WHERE activo = true ORDER BY id ASC ;";
 
         try{
             PreparedStatement sentence = connection.prepareStatement(query);

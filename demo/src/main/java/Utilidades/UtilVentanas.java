@@ -26,7 +26,7 @@ public class UtilVentanas {
             Parent parent = loader.load();
             stage.setScene(new Scene(parent));
             stage.initModality(Modality.APPLICATION_MODAL);
-            stage.show();
+            stage.showAndWait();
             if(cerrarVentana){
                 cerrar(control);
             }

@@ -12,8 +12,8 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
 //       FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("EstudianteTabla.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 350);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TutorTabla.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Tabla");
         stage.setResizable(false);
         stage.setScene(scene);
