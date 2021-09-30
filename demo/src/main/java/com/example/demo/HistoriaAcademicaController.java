@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class HistoriaAcademicaController  extends Controller implements Initializable {
+public class HistoriaAcademicaController implements Initializable, Controller {
     public TableView<HistoriaAcademica> tbHistoriasAcademicas;
     public TableColumn<HistoriaAcademica, String> tcEstudiante;
     public TableColumn<HistoriaAcademica, String> tcColegioAnterior;

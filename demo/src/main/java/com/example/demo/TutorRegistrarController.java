@@ -18,7 +18,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class TutorRegistrarController extends Controller implements Initializable {
+public class TutorRegistrarController implements Initializable, Controller {
     public ComboBox cb_nombreEstudiante;
     public TextField tf_primerNombreTutor;
     public TextField tf_segundoNombreTutor;

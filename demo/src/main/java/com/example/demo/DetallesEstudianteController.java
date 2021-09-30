@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class DetallesEstudianteController extends Controller implements Initializable {
+public class DetallesEstudianteController implements Initializable, Controller {
     @FXML
     private TextField tfPrimApe;
     @FXML

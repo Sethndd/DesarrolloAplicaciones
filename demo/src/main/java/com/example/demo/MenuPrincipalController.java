@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuPrincipalController extends Controller implements Initializable {
+public class MenuPrincipalController implements Controller {
     @FXML
     private Button buttonEstudiantes;
     @FXML
@@ -20,12 +20,6 @@ public class MenuPrincipalController extends Controller implements Initializable
     private Button buttonColegios;
     @FXML
     private Button buttonInfoAcademica;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
 
     @FXML
     protected void clickEstudiantes(ActionEvent actionEvent){

@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.w3c.dom.events.MouseEvent;
 
-public class TutorTablaController extends Controller implements Initializable {
+public class TutorTablaController implements Initializable, Controller {
     public TableColumn<Tutor, String> tc_primernombre;
     public TableColumn<Tutor, String> tc_segundonombre;
     public TableColumn<Tutor, String> tc_apellidopaterno;

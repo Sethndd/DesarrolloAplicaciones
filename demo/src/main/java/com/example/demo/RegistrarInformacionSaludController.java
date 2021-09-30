@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
 
-public class RegistrarInformacionSaludController extends Controller implements Initializable {
+public class RegistrarInformacionSaludController  implements Initializable, Controller {
     @FXML
     private Label labelNombreEstudiante;
     @FXML

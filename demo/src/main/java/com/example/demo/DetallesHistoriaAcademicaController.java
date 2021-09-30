@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.*;
 
-public class DetallesHistoriaAcademicaController extends Controller  implements Initializable {
+public class DetallesHistoriaAcademicaController implements Initializable, Controller {
 
     public ComboBox<Estudiante> cbEstudiante;
     public TextField tfColegioAnterior;
