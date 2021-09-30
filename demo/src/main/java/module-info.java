@@ -1,7 +1,6 @@
 module com.example.demo {
     requires javafx.controls;
     requires javafx.fxml;
-    requires mysql.connector.java;
     requires java.sql;
     requires postgresql;
 
