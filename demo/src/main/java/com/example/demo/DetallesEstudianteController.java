@@ -27,12 +27,12 @@ public class DetallesEstudianteController extends Controller implements Initiali
     @FXML
     private TextField tfSegNom;
     @FXML
+    private TextField tfOrigen;
+    @FXML
     private Button btnAceptar;
     @FXML
     private Button btnCancelar;
-    @FXML
     private Estudiante estudiante;
-    @FXML
     private String tipoVentana;
 
     public DetallesEstudianteController(String tipoVentana) {
@@ -54,7 +54,8 @@ public class DetallesEstudianteController extends Controller implements Initiali
                         tfSegApe.getText(),
                         tfPrimNom.getText(),
                         tfSegNom.getText(),
-                        true);
+                        true,
+                        tfOrigen.getText());
                 EstudianteDAO.guardar(estudiante);
             }
             else{
@@ -82,6 +83,8 @@ public class DetallesEstudianteController extends Controller implements Initiali
             tfPrimNom.setText(estudiante.getPrimerNom());
             tfSegNom.setEditable(false);
             tfSegNom.setText(estudiante.getSegundoNom());
+            tfOrigen.setEditable(false);
+            tfOrigen.setText(estudiante.getOrigen());
 
             btnCancelar.setVisible(false);
             btnCancelar.setManaged(false);

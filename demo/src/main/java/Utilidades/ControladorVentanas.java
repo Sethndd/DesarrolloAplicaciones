@@ -20,7 +20,7 @@ public class ControladorVentanas {
         Scene scene = null;
 
         try {
-            scene = new Scene(fxmlLoader.load(), 300, 300);
+            scene = new Scene(fxmlLoader.load());
             stage.setTitle(nombreFXML);
             stage.setResizable(false);
             stage.setScene(scene);

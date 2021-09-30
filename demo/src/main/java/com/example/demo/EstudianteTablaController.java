@@ -30,6 +30,8 @@ public class EstudianteTablaController extends Controller implements Initializab
     public TableColumn<Estudiante, String> tcPrimNom;
     @FXML
     public TableColumn<Estudiante, String> tcSegNom;
+    @FXML
+    public TableColumn<Estudiante, String> tcOrigen;
     ObservableList<Estudiante> estudiantesObs;
     List<Estudiante> estudiantes;
 
@@ -77,6 +79,7 @@ public class EstudianteTablaController extends Controller implements Initializab
         tcSegApe.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("segundoApe"));
         tcPrimNom.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("primerNom"));
         tcSegNom.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("segundoNom"));
+        tcOrigen.setCellValueFactory(new PropertyValueFactory<Estudiante, String>("origen"));
 
         estudiantes = EstudianteDAO.getEstudiantesActivos();
         estudiantesObs =  FXCollections.observableArrayList(estudiantes);

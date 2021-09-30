@@ -7,27 +7,25 @@ public class Estudiante {
     private String segundoApe;
     private String segundoNom;
     private boolean activo;
+    private String origen;
 
-    public Estudiante() {
-        this.id = 0;
-    }
-
-    public Estudiante(String primerApe, String primerNom, String segundoApe, String segundoNom, boolean activo) {
-        id = 0;
+    public Estudiante(String primerApe, String segundoApe, String primerNom, String segundoNom, boolean activo, String origen) {
         this.primerApe = primerApe;
         this.primerNom = primerNom;
         this.segundoApe = segundoApe;
         this.segundoNom = segundoNom;
         this.activo = activo;
+        this.origen = origen;
     }
 
-    public Estudiante(int id, String primerApe, String primerNom, String segundoApe, String segundoNom, boolean activo) {
+    public Estudiante(int id, String primerApe, String segundoApe, String primerNom, String segundoNom, boolean activo, String origen) {
         this.id = id;
         this.primerApe = primerApe;
         this.primerNom = primerNom;
         this.segundoApe = segundoApe;
         this.segundoNom = segundoNom;
         this.activo = activo;
+        this.origen = origen;
     }
 
     public int getId() {
@@ -78,8 +76,12 @@ public class Estudiante {
         this.activo = activo;
     }
 
-    @Override
-    public String toString() {
-        return id + " " + primerApe + " " + segundoApe + " " + primerNom + " " + segundoNom + " " + activo;
+    public String getOrigen() {
+        return origen;
     }
+
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
+
 }
