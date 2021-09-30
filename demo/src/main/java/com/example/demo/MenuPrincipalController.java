@@ -33,7 +33,7 @@ public class MenuPrincipalController extends Controller implements Initializable
     }
     @FXML
     protected void ClickTutores(ActionEvent actionEvent){
-
+        UtilVentanas.iniciarVentana(buttonEstudiantes, new TutorTablaController(), "TutorTabla.fxml", UtilVentanas.NO_CERRAR);
     }
     @FXML
     protected void ClickInfoSalud(ActionEvent actionEvent){
@@ -41,7 +41,7 @@ public class MenuPrincipalController extends Controller implements Initializable
     }
     @FXML
     protected void clickColegios(ActionEvent actionEvent){
-
+        UtilVentanas.iniciarVentana(buttonSalud, new ColegioController(), "Colegio.fxml", UtilVentanas.NO_CERRAR);
     }
     @FXML
     protected void ClickInfoAcademica(ActionEvent actionEvent){
