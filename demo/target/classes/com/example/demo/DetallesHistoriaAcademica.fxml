@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="376.0" spacing="30.0">
+         <children>
+            <Label text="Historia Académica" />
+            <HBox alignment="CENTER">
+               <children>
+                  <Label prefWidth="100.0" text="Estudiante:" />
+                  <ComboBox fx:id="cbEstudiante" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label prefWidth="100.0" text="Colegio Anterior:" />
+                  <TextField fx:id="tfColegioAnterior" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label prefWidth="100.0" text="Año:" />
+                  <TextField fx:id="tfAño" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label prefWidth="100.0" text="Grado:" />
+                  <TextField fx:id="tfGrado" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <Button fx:id="btnAceptar" mnemonicParsing="false" onAction="#clicAceptar" text="Aceptar" />
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#clicCancelar" text="Cancelar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
