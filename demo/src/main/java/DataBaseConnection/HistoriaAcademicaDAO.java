@@ -14,7 +14,7 @@ public class HistoriaAcademicaDAO {
         Connection connection = DBConnector.getConnection();
         String query = "SELECT \"idHistoria_academica\", \"idEstudiante\", colegio_anterior, ano, grado, h.activo, CONCAT(e.primer_nom, ' ', e.segundo_nom, ' ', e.primer_ape, ' ', e.segundo_ape) AS Estudiante " +
                 "FROM public.\"Historia_Academica\" h " +
-                "LEFT JOIN \"estudiante\" e ON \"idEstudiante\" = e.id " +
+                "LEFT JOIN public.\"Estudiante\" e ON \"idEstudiante\" = e.id " +
                 "WHERE h.activo = true;";
         List<HistoriaAcademica> historiaAcademicas = new ArrayList<>();
         try {
@@ -58,7 +58,7 @@ public class HistoriaAcademicaDAO {
     public static void borrar(HistoriaAcademica historiaAcademica){
         Connection connection = DBConnector.getConnection();
         try {
-            String query = "UPDATE public.\"Historia_Academica\" SET activo=false WHERE idHistoria_academica = ?;";
+            String query = "UPDATE public.\"Historia_Academica\" SET activo=false WHERE \"idHistoria_academica\" = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, historiaAcademica.getIdHistoriaAcademica());
             preparedStatement.execute();
