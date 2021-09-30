@@ -1,8 +1,13 @@
 # Desarrollo de aplicaciones
 **NRC:** 83503<br>
 **Profesor:** Gustavo Padrón Rivera<br>
-**Estudiante:** Seth Noé Díaz Díaz<br>
-**Matricula:** S18012147
+**Estudiantes:** <br>
+Seth Noé Díaz Díaz<br>
+Daniel García Morales<br>
+José Damián Mendoza Carmona<br>
+Ángel de Jesús Sánchez Morales<br>
+Abner Jeffrey Tapia Cruz<br>
+
 
 Sistema ABC: 
 
