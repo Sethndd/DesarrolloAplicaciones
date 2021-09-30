@@ -59,6 +59,8 @@ public class HistoriaAcademicaController  extends Controller implements Initiali
         if (historiaAcademica != null){
             DetallesHistoriaAcademicaController ventana = new DetallesHistoriaAcademicaController(historiaAcademica, "Consultar");
             UtilVentanas.iniciarVentana(tbHistoriasAcademicas, ventana, "DetallesHistoriaAcademica.fxml", UtilVentanas.NO_CERRAR);
+        } else {
+            UtilVentanas.alerta("Asegúrese de seleccionar una Historia Académica", Alert.AlertType.WARNING);
         }
     }
 
@@ -70,6 +72,8 @@ public class HistoriaAcademicaController  extends Controller implements Initiali
                 UtilVentanas.alerta("Realizado", Alert.AlertType.INFORMATION);
                 llenarTabla();
             }
+        } else {
+            UtilVentanas.alerta("Asegúrese de seleccionar una Historia Académica", Alert.AlertType.WARNING);
         }
     }
 }
