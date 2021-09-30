@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="207.0" layoutY="24.0" prefHeight="45.0" prefWidth="208.0" text="Información de salud">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="156.0" prefHeight="45.0" prefWidth="185.0" text="Número de seguro social:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="224.0" prefHeight="45.0" prefWidth="168.0" text="Nombre de la entidad:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="283.0" prefHeight="45.0" prefWidth="117.0" text="Tipo de sangre:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="98.0" prefHeight="45.0" prefWidth="185.0" text="Nombre del estudiante:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelNombreEstudiante" layoutX="274.0" layoutY="98.0" prefHeight="45.0" prefWidth="285.0" text="NombreEstudiante">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelNumeroSS" layoutX="274.0" layoutY="156.0" prefHeight="45.0" prefWidth="285.0" text="NúmeroSeguroSocial">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelNombreEntidad" layoutX="274.0" layoutY="224.0" prefHeight="45.0" prefWidth="285.0" text="NombreEntidad">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTipoSangre" layoutX="274.0" layoutY="283.0" prefHeight="45.0" prefWidth="285.0" text="TipoSangre">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
